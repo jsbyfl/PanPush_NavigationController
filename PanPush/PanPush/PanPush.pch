@@ -1,0 +1,31 @@
+//
+//  PanPush.pch
+//  PanPush
+//
+//  Created by lpc on 16/3/16.
+//  Copyright © 2016年 lpc. All rights reserved.
+//
+
+#ifndef PanPush_pch
+#define PanPush_pch
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#import "PanNavigationController.h"
+#import "FirstViewController.h"
+#import "SecondViewController.h"
+
+
+#ifdef DEBUG
+#   define DLog(fmt, ...) {NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);}
+#   define ELog(err) {if(err) DLog(@"%@", err)}
+#else
+#   define DLog(...)
+#   define ELog(err)
+#endif
+
+#endif /* PanPush_pch */
+
+
+

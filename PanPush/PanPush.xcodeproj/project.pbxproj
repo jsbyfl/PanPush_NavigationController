@@ -1,0 +1,375 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		18B762471C99989200A93B7C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B762461C99989200A93B7C /* main.m */; };
+		18B7624A1C99989200A93B7C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B762491C99989200A93B7C /* AppDelegate.m */; };
+		18B762521C99989200A93B7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B762511C99989200A93B7C /* Assets.xcassets */; };
+		18B7625F1C9998D000A93B7C /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7625D1C9998D000A93B7C /* FirstViewController.m */; };
+		18B762601C9998D000A93B7C /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B7625E1C9998D000A93B7C /* FirstViewController.xib */; };
+		18B762641C9998DE00A93B7C /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B762621C9998DE00A93B7C /* SecondViewController.m */; };
+		18B762651C9998DE00A93B7C /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B762631C9998DE00A93B7C /* SecondViewController.xib */; };
+		E2661E5C1C9FEFA400DA57D8 /* PanNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2661E4C1C9FEFA400DA57D8 /* PanNavigationController.m */; };
+		E2661E5D1C9FEFA400DA57D8 /* NSObject+TransitionContextHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E2661E501C9FEFA400DA57D8 /* NSObject+TransitionContextHelper.m */; };
+		E2661E5E1C9FEFA400DA57D8 /* PanAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = E2661E521C9FEFA400DA57D8 /* PanAnimator.m */; };
+		E2661E5F1C9FEFA400DA57D8 /* PanPopAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = E2661E541C9FEFA400DA57D8 /* PanPopAnimator.m */; };
+		E2661E601C9FEFA400DA57D8 /* PanPushAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = E2661E561C9FEFA400DA57D8 /* PanPushAnimator.m */; };
+		E2661E611C9FEFA400DA57D8 /* PanSwiper.m in Sources */ = {isa = PBXBuildFile; fileRef = E2661E581C9FEFA400DA57D8 /* PanSwiper.m */; };
+		E2661E621C9FEFA400DA57D8 /* PanInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = E2661E5B1C9FEFA400DA57D8 /* PanInteractiveTransition.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		18B762421C99989200A93B7C /* PanPush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanPush.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18B762461C99989200A93B7C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		18B762481C99989200A93B7C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		18B762491C99989200A93B7C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		18B762511C99989200A93B7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		18B762561C99989200A93B7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18B7625C1C9998D000A93B7C /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		18B7625D1C9998D000A93B7C /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		18B7625E1C9998D000A93B7C /* FirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
+		18B762611C9998DE00A93B7C /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		18B762621C9998DE00A93B7C /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		18B762631C9998DE00A93B7C /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
+		18B762661C999F4400A93B7C /* PanPush.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanPush.pch; sourceTree = "<group>"; };
+		E2661E4B1C9FEFA400DA57D8 /* PanNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanNavigationController.h; sourceTree = "<group>"; };
+		E2661E4C1C9FEFA400DA57D8 /* PanNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanNavigationController.m; sourceTree = "<group>"; };
+		E2661E4F1C9FEFA400DA57D8 /* NSObject+TransitionContextHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TransitionContextHelper.h"; sourceTree = "<group>"; };
+		E2661E501C9FEFA400DA57D8 /* NSObject+TransitionContextHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TransitionContextHelper.m"; sourceTree = "<group>"; };
+		E2661E511C9FEFA400DA57D8 /* PanAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanAnimator.h; sourceTree = "<group>"; };
+		E2661E521C9FEFA400DA57D8 /* PanAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanAnimator.m; sourceTree = "<group>"; };
+		E2661E531C9FEFA400DA57D8 /* PanPopAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanPopAnimator.h; sourceTree = "<group>"; };
+		E2661E541C9FEFA400DA57D8 /* PanPopAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanPopAnimator.m; sourceTree = "<group>"; };
+		E2661E551C9FEFA400DA57D8 /* PanPushAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanPushAnimator.h; sourceTree = "<group>"; };
+		E2661E561C9FEFA400DA57D8 /* PanPushAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanPushAnimator.m; sourceTree = "<group>"; };
+		E2661E571C9FEFA400DA57D8 /* PanSwiper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanSwiper.h; sourceTree = "<group>"; };
+		E2661E581C9FEFA400DA57D8 /* PanSwiper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanSwiper.m; sourceTree = "<group>"; };
+		E2661E5A1C9FEFA400DA57D8 /* PanInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanInteractiveTransition.h; sourceTree = "<group>"; };
+		E2661E5B1C9FEFA400DA57D8 /* PanInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanInteractiveTransition.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		18B7623F1C99989200A93B7C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18B762391C99989200A93B7C = {
+			isa = PBXGroup;
+			children = (
+				18B762441C99989200A93B7C /* PanPush */,
+				18B762431C99989200A93B7C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		18B762431C99989200A93B7C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18B762421C99989200A93B7C /* PanPush.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		18B762441C99989200A93B7C /* PanPush */ = {
+			isa = PBXGroup;
+			children = (
+				E2661E4A1C9FEFA400DA57D8 /* PanNavigationController */,
+				18B762481C99989200A93B7C /* AppDelegate.h */,
+				18B762491C99989200A93B7C /* AppDelegate.m */,
+				18B7625C1C9998D000A93B7C /* FirstViewController.h */,
+				18B7625D1C9998D000A93B7C /* FirstViewController.m */,
+				18B7625E1C9998D000A93B7C /* FirstViewController.xib */,
+				18B762611C9998DE00A93B7C /* SecondViewController.h */,
+				18B762621C9998DE00A93B7C /* SecondViewController.m */,
+				18B762631C9998DE00A93B7C /* SecondViewController.xib */,
+				18B762511C99989200A93B7C /* Assets.xcassets */,
+				18B762561C99989200A93B7C /* Info.plist */,
+				18B762451C99989200A93B7C /* Supporting Files */,
+			);
+			path = PanPush;
+			sourceTree = "<group>";
+		};
+		18B762451C99989200A93B7C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				18B762461C99989200A93B7C /* main.m */,
+				18B762661C999F4400A93B7C /* PanPush.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E2661E4A1C9FEFA400DA57D8 /* PanNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				E2661E4B1C9FEFA400DA57D8 /* PanNavigationController.h */,
+				E2661E4C1C9FEFA400DA57D8 /* PanNavigationController.m */,
+				E2661E4D1C9FEFA400DA57D8 /* PanSwiper */,
+			);
+			path = PanNavigationController;
+			sourceTree = "<group>";
+		};
+		E2661E4D1C9FEFA400DA57D8 /* PanSwiper */ = {
+			isa = PBXGroup;
+			children = (
+				E2661E4E1C9FEFA400DA57D8 /* Animator */,
+				E2661E571C9FEFA400DA57D8 /* PanSwiper.h */,
+				E2661E581C9FEFA400DA57D8 /* PanSwiper.m */,
+				E2661E591C9FEFA400DA57D8 /* Transition */,
+			);
+			path = PanSwiper;
+			sourceTree = "<group>";
+		};
+		E2661E4E1C9FEFA400DA57D8 /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				E2661E4F1C9FEFA400DA57D8 /* NSObject+TransitionContextHelper.h */,
+				E2661E501C9FEFA400DA57D8 /* NSObject+TransitionContextHelper.m */,
+				E2661E511C9FEFA400DA57D8 /* PanAnimator.h */,
+				E2661E521C9FEFA400DA57D8 /* PanAnimator.m */,
+				E2661E531C9FEFA400DA57D8 /* PanPopAnimator.h */,
+				E2661E541C9FEFA400DA57D8 /* PanPopAnimator.m */,
+				E2661E551C9FEFA400DA57D8 /* PanPushAnimator.h */,
+				E2661E561C9FEFA400DA57D8 /* PanPushAnimator.m */,
+			);
+			path = Animator;
+			sourceTree = "<group>";
+		};
+		E2661E591C9FEFA400DA57D8 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				E2661E5A1C9FEFA400DA57D8 /* PanInteractiveTransition.h */,
+				E2661E5B1C9FEFA400DA57D8 /* PanInteractiveTransition.m */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		18B762411C99989200A93B7C /* PanPush */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18B762591C99989200A93B7C /* Build configuration list for PBXNativeTarget "PanPush" */;
+			buildPhases = (
+				18B7623E1C99989200A93B7C /* Sources */,
+				18B7623F1C99989200A93B7C /* Frameworks */,
+				18B762401C99989200A93B7C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PanPush;
+			productName = PanPush;
+			productReference = 18B762421C99989200A93B7C /* PanPush.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		18B7623A1C99989200A93B7C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = lpc;
+				TargetAttributes = {
+					18B762411C99989200A93B7C = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 18B7623D1C99989200A93B7C /* Build configuration list for PBXProject "PanPush" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 18B762391C99989200A93B7C;
+			productRefGroup = 18B762431C99989200A93B7C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				18B762411C99989200A93B7C /* PanPush */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		18B762401C99989200A93B7C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18B762521C99989200A93B7C /* Assets.xcassets in Resources */,
+				18B762601C9998D000A93B7C /* FirstViewController.xib in Resources */,
+				18B762651C9998DE00A93B7C /* SecondViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		18B7623E1C99989200A93B7C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18B762641C9998DE00A93B7C /* SecondViewController.m in Sources */,
+				E2661E611C9FEFA400DA57D8 /* PanSwiper.m in Sources */,
+				E2661E5C1C9FEFA400DA57D8 /* PanNavigationController.m in Sources */,
+				18B7624A1C99989200A93B7C /* AppDelegate.m in Sources */,
+				18B7625F1C9998D000A93B7C /* FirstViewController.m in Sources */,
+				E2661E5F1C9FEFA400DA57D8 /* PanPopAnimator.m in Sources */,
+				E2661E5D1C9FEFA400DA57D8 /* NSObject+TransitionContextHelper.m in Sources */,
+				18B762471C99989200A93B7C /* main.m in Sources */,
+				E2661E5E1C9FEFA400DA57D8 /* PanAnimator.m in Sources */,
+				E2661E601C9FEFA400DA57D8 /* PanPushAnimator.m in Sources */,
+				E2661E621C9FEFA400DA57D8 /* PanInteractiveTransition.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		18B762571C99989200A93B7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PanPush/PanPush.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		18B762581C99989200A93B7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/PanPush/PanPush.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		18B7625A1C99989200A93B7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PanPush/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.PanPush;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		18B7625B1C99989200A93B7C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PanPush/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.PanPush;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18B7623D1C99989200A93B7C /* Build configuration list for PBXProject "PanPush" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18B762571C99989200A93B7C /* Debug */,
+				18B762581C99989200A93B7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18B762591C99989200A93B7C /* Build configuration list for PBXNativeTarget "PanPush" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18B7625A1C99989200A93B7C /* Debug */,
+				18B7625B1C99989200A93B7C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 18B7623A1C99989200A93B7C /* Project object */;
+}
