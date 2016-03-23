@@ -8,12 +8,26 @@
 
 #import "SecondViewController.h"
 
-@interface SecondViewController ()
+@interface SecondViewController ()<PanPushToNextViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *label;
 
 @end
 
 @implementation SecondViewController
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    PanNavigationController *nav = (PanNavigationController *)self.navigationController;
+    [nav setNextViewControllerDelegate:self];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    PanNavigationController *nav = (PanNavigationController *)self.navigationController;
+    [nav setNextViewControllerDelegate:nil];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,6 +48,14 @@
     if (count > 1) {
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
+}
+
+
+#pragma mark -- PanSwiper Delegate --
+- (UIViewController *)swiperBeginPanPushToNextController:(PanSwiper *)swiper
+{
+    FirstViewController *controller = [[FirstViewController alloc] initWithNibName:NSStringFromClass([FirstViewController class]) bundle:nil];
+    return controller;
 }
 
 @end

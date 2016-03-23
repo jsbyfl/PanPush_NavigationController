@@ -41,7 +41,6 @@
 #pragma mark -- Button Response --
 - (IBAction)push:(id)sender {
     SecondViewController *controller = [[SecondViewController alloc] initWithNibName:NSStringFromClass([SecondViewController class]) bundle:nil];
-//    controller.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:controller animated:YES];
 }
 

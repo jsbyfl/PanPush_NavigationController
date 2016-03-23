@@ -24,7 +24,7 @@ typedef NS_ENUM(NSInteger, PanGestureRecognizer_Direction) {
 @property (strong, nonatomic) PanInteractiveTransition *interactionController;
 
 @property (strong, nonatomic) PanAnimator *animator;
-@property (assign, nonatomic) BOOL isDuringAnimation;   //Default is NO;
+@property (assign, nonatomic) BOOL is_Should_Begain_Animation;   //Default is YES;
 
 @end
 
@@ -124,7 +124,10 @@ typedef NS_ENUM(NSInteger, PanGestureRecognizer_Direction) {
 
 - (void)panGrBegan:(UIPanGestureRecognizer *)recognizer
 {
-    self.isDuringAnimation = YES;
+    if (!self.is_Should_Begain_Animation) {
+        return;
+    }
+    
     self.animator = nil;
     self.interactionController = nil;
 
@@ -166,12 +169,10 @@ typedef NS_ENUM(NSInteger, PanGestureRecognizer_Direction) {
 
 - (void)panGrEnded:(UIPanGestureRecognizer *)recognizer progress:(CGFloat)progress
 {
-    if (!self.interactionController) {
-        return;
+    if (self.interactionController && self.animator) {
+        //为了防止动画进行时再次重新拖拽,可在动画结束时设置为yes
+        self.panRecognizer.enabled = NO;
     }
-    //为了防止动画进行时再次重新拖拽,可在动画结束时设置为yes
-    self.panRecognizer.enabled = NO;
-
 
     CGFloat final_progress = 0.0;
     CGFloat k_Default = 0.0;
@@ -225,18 +226,19 @@ typedef NS_ENUM(NSInteger, PanGestureRecognizer_Direction) {
 
     self.interactionController = [PanInteractiveTransition new];
 }
-- (void)transitionEnd
+
+- (void)animatorDidEnd
 {
     self.interactionController = nil;
-    self.isDuringAnimation = NO;
+    self.is_Should_Begain_Animation = YES;
+    self.panRecognizer.enabled = YES;
 }
 
 
 #pragma mark -- PanAnimatorDelegate --
 - (void)animator:(PanAnimator *)animator completeWithTransitionFinished:(BOOL)finish
 {
-    [self transitionEnd];
-    self.panRecognizer.enabled = YES;
+    [self animatorDidEnd];
 }
 
 
@@ -244,7 +246,7 @@ typedef NS_ENUM(NSInteger, PanGestureRecognizer_Direction) {
 
 - (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
 {
-    if (self.isDuringAnimation &&
+    if (self.is_Should_Begain_Animation &&
         (operation == UINavigationControllerOperationPop || operation == UINavigationControllerOperationPush)){
         return self.animator;
     }
@@ -259,9 +261,14 @@ typedef NS_ENUM(NSInteger, PanGestureRecognizer_Direction) {
     return nil;
 }
 
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    self.is_Should_Begain_Animation = NO;
+}
+
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    [self transitionEnd];
+    [self animatorDidEnd];
 }
 
 @end

@@ -5,7 +5,7 @@
 //  Created by lpc on 16/3/16.
 //  Copyright © 2016年 lpc. All rights reserved.
 //
-//  代码地址:https://github.com/jsbyfl/PanNavigationController.git
+//  代码地址:https://github.com/jsbyfl/PanPush_NavigationController.git
 
 #import <UIKit/UIKit.h>
 #import "PanSwiper.h"
