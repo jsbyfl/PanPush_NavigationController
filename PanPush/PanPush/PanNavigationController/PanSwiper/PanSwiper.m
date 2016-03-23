@@ -24,7 +24,7 @@ typedef NS_ENUM(NSInteger, PanGestureRecognizer_Direction) {
 @property (strong, nonatomic) PanInteractiveTransition *interactionController;
 
 @property (strong, nonatomic) PanAnimator *animator;
-@property (assign, nonatomic) BOOL is_Should_Begain_Animation;   //Default is YES;
+@property (assign, nonatomic) BOOL is_Should_Begain_Animation;      //Default is NO;
 
 @end
 
@@ -67,6 +67,8 @@ typedef NS_ENUM(NSInteger, PanGestureRecognizer_Direction) {
     popRecognizer.maximumNumberOfTouches = 1;
     [gestureView addGestureRecognizer:popRecognizer];
     self.panRecognizer = popRecognizer;
+    
+    self.is_Should_Begain_Animation = NO;
 }
 
 
@@ -123,11 +125,7 @@ typedef NS_ENUM(NSInteger, PanGestureRecognizer_Direction) {
 }
 
 - (void)panGrBegan:(UIPanGestureRecognizer *)recognizer
-{
-    if (!self.is_Should_Begain_Animation) {
-        return;
-    }
-    
+{    
     self.animator = nil;
     self.interactionController = nil;
 
@@ -169,7 +167,7 @@ typedef NS_ENUM(NSInteger, PanGestureRecognizer_Direction) {
 
 - (void)panGrEnded:(UIPanGestureRecognizer *)recognizer progress:(CGFloat)progress
 {
-    if (self.interactionController && self.animator) {
+    if (self.interactionController || self.animator) {
         //为了防止动画进行时再次重新拖拽,可在动画结束时设置为yes
         self.panRecognizer.enabled = NO;
     }
@@ -225,12 +223,16 @@ typedef NS_ENUM(NSInteger, PanGestureRecognizer_Direction) {
     self.animator.delegate = self;
 
     self.interactionController = [PanInteractiveTransition new];
+    
+    self.is_Should_Begain_Animation = YES;
 }
 
 - (void)animatorDidEnd
 {
+    self.animator = nil;
     self.interactionController = nil;
-    self.is_Should_Begain_Animation = YES;
+    
+    self.is_Should_Begain_Animation = NO;
     self.panRecognizer.enabled = YES;
 }
 
