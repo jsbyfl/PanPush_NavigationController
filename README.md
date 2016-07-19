@@ -11,9 +11,9 @@
 
 ```
 //关闭右滑返回功能
-- (void)viewWillAppear:(BOOL)animated
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
+    [super viewDidAppear:animated];
     PanNavigationController *nav = (PanNavigationController *)self.navigationController;
     nav.isForbidDragBack = YES;
 }
