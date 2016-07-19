@@ -20,7 +20,7 @@
 
 - (void)setup
 {
-    self.completionCurve = UIViewAnimationCurveEaseOut;
+    self.completionCurve = UIViewAnimationCurveEaseInOut;
 }
 
 
