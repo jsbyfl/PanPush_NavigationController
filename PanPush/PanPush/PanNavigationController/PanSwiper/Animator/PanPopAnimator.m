@@ -44,23 +44,30 @@
     //TabbarController hidesBottomBarWhenPushed
     UITabBarController *tabBarController = previousController.tabBarController;
     UINavigationController *navController = previousController.navigationController;
-    UITabBar *tabBar = tabBarController.tabBar;
+    UITabBar *tempTabbar = tabBarController.tabBar;
     BOOL shouldAddTabBarBackToTabBarController = NO;
     BOOL hidesBottomBarWhenPushed = currentController.hidesBottomBarWhenPushed;
     BOOL tabBarControllerContainsToViewController = [tabBarController.viewControllers containsObject:previousController];
     BOOL tabBarControllerContainsNavController = [tabBarController.viewControllers containsObject:navController];
     BOOL isToViewControllerFirstInNavController = [navController.viewControllers firstObject] == previousController;
-    if (hidesBottomBarWhenPushed && tabBar && (tabBarControllerContainsToViewController || (isToViewControllerFirstInNavController && tabBarControllerContainsNavController))) {
-        [previousController.view addSubview:tabBar];
+    if (hidesBottomBarWhenPushed && tempTabbar && (tabBarControllerContainsToViewController || (isToViewControllerFirstInNavController && tabBarControllerContainsNavController))) {
+        [previousController.view addSubview:tempTabbar];
         shouldAddTabBarBackToTabBarController = YES;
         CGFloat transform_tabbar = (previousController.view.frame.size.width);
-        tabBar.transform = CGAffineTransformMakeTranslation(transform_tabbar, 0);
+        tempTabbar.transform = CGAffineTransformMakeTranslation(transform_tabbar, 0);
+        
+        //如果导航条显示&不透明，可能会引起tabbar偏移
+        if (!navController.navigationBar.translucent && !navController.navigationBarHidden) {
+            CGRect oldFrame = tempTabbar.frame;
+            oldFrame.origin.y = CGRectGetHeight(previousController.view.frame) - CGRectGetHeight(tempTabbar.frame);
+            tempTabbar.frame = oldFrame;
+        }
     }
 
 
     [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
         if (shouldAddTabBarBackToTabBarController) {
-            tabBar.transform = CGAffineTransformIdentity;
+            tempTabbar.transform = CGAffineTransformIdentity;
         }
         
         //设置动画结束时,2个Controller的偏移量 (目标controller必须重置)
@@ -71,8 +78,8 @@
 
     } completion:^(BOOL finished) {
         if (shouldAddTabBarBackToTabBarController) {
-            [tabBarController.view addSubview:tabBar];
-            tabBar.transform = CGAffineTransformIdentity;
+            //[tabBarController.view addSubview:tempTabbar]; //20160810
+            tempTabbar.transform = CGAffineTransformIdentity;
         }
 
         [dimmingView removeFromSuperview];
