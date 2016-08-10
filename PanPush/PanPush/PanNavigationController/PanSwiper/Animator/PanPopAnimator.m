@@ -50,26 +50,40 @@
     BOOL tabBarControllerContainsToViewController = [tabBarController.viewControllers containsObject:previousController];
     BOOL tabBarControllerContainsNavController = [tabBarController.viewControllers containsObject:navController];
     BOOL isToViewControllerFirstInNavController = [navController.viewControllers firstObject] == previousController;
+
     if (hidesBottomBarWhenPushed && tempTabbar && (tabBarControllerContainsToViewController || (isToViewControllerFirstInNavController && tabBarControllerContainsNavController))) {
         [previousController.view addSubview:tempTabbar];
         shouldAddTabBarBackToTabBarController = YES;
         CGFloat transform_tabbar = (previousController.view.frame.size.width);
         tempTabbar.transform = CGAffineTransformMakeTranslation(transform_tabbar, 0);
-        
-        //如果导航条显示&不透明，可能会引起tabbar偏移
-        if (!navController.navigationBar.translucent && !navController.navigationBarHidden) {
-            CGRect oldFrame = tempTabbar.frame;
-            oldFrame.origin.y = CGRectGetHeight(previousController.view.frame) - CGRectGetHeight(tempTabbar.frame);
-            tempTabbar.frame = oldFrame;
+
+        BOOL _navTranslucent = navController.navigationBar.translucent;
+        BOOL _tabbarTranslucent = tempTabbar.translucent;
+        if (!navController.navigationBarHidden) {
+            if (_navTranslucent == YES && _tabbarTranslucent == YES) {
+
+            }
+            else if (_navTranslucent == NO && _tabbarTranslucent == YES) {
+                CGRect oldFrame = tempTabbar.frame;
+                oldFrame.origin.y = CGRectGetHeight(tabBarController.view.frame) - CGRectGetHeight(oldFrame) - CGRectGetMaxY(navController.navigationBar.frame);
+                tempTabbar.frame = oldFrame;
+            }
+            else if (_navTranslucent == YES && _tabbarTranslucent == NO) {
+                //NEED TO DO
+
+            }
+            else if (_navTranslucent == NO && _tabbarTranslucent == NO) {
+                //NEED TO DO
+                
+            }
         }
     }
-
 
     [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
         if (shouldAddTabBarBackToTabBarController) {
             tempTabbar.transform = CGAffineTransformIdentity;
         }
-        
+
         //设置动画结束时,2个Controller的偏移量 (目标controller必须重置)
         previousController.view.transform = CGAffineTransformIdentity;
         CGFloat transform_tx = previousController.view.frame.size.width;
@@ -78,11 +92,14 @@
 
     } completion:^(BOOL finished) {
         if (shouldAddTabBarBackToTabBarController) {
-            //[tabBarController.view addSubview:tempTabbar]; //20160810
+            CGRect oldFrame = tempTabbar.frame;
+            oldFrame.origin.y = CGRectGetHeight(tabBarController.view.frame) - CGRectGetHeight(oldFrame);
+            tempTabbar.frame = oldFrame;
+            [tabBarController.view addSubview:tempTabbar];
             tempTabbar.transform = CGAffineTransformIdentity;
         }
-
         [dimmingView removeFromSuperview];
+
         //重置上一个controller的偏移量(当前的controller不在栈里)
         previousController.view.transform = CGAffineTransformIdentity;
         previousController.view.clipsToBounds = previousClipsToBounds;
